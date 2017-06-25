@@ -18,4 +18,8 @@ class Cart < ApplicationRecord
     end
     sum  #没有这个显示的是代码
   end
+
+  def clean!
+    cart_items.destroy_all
+  end
 end
