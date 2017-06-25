@@ -19,7 +19,7 @@ class CartItemsController < ApplicationController
     else
       flash[:warning] = "数量不足"
     end
-    redirect_to :carts_path
+    redirect_to carts_path
   end
 
   private
