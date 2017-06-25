@@ -12,7 +12,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Prpduct.new(product_params)
+    @product = Product.new(product_params)
 
     if @product.save
       redirect_to admin_products_path
@@ -43,6 +43,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.requrie(:product).permit(:title,:description,:price, :quantity, :image)
+    params.require(:product).permit(:title,:description,:price, :quantity, :image)
   end
 end
