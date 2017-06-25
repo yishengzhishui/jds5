@@ -1,4 +1,10 @@
 class Order < ApplicationRecord
+  before_create :generate_toekn
+
+  def generate_toekn
+    self.token = SecureRandom.uuid
+  end
+
   belongs_to :user
   has_many :product_lists
 
